@@ -50,7 +50,8 @@ public class RobotContainer {
   private void configureBindings() {
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
    // m_driverController.b().onTrue(new ClimberCommand(climberSubsystem, 1));
-    m_driverController.a().onTrue(new PivotCommand(pivotSubsystem, 1));
+    m_driverController.a().onTrue(new PivotCommand(pivotSubsystem, 20));
+    m_driverController.b().onTrue(new InstantCommand(()-> pivotSubsystem.resetAngle()));
      // m_driverController.y().onTrue(new InstantCommand(()-> climberSubsystem.stopMotor()));
 
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,

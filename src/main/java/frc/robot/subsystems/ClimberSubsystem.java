@@ -16,7 +16,7 @@ public class ClimberSubsystem extends SubsystemBase {
 
   public ClimberSubsystem() {
       TalonMotor1 = new TalonFX(9);
-      TalonMotor2 = new TalonFX(15);
+      TalonMotor2 = new TalonFX(2);
       turnPID.setTolerance(0);
   }
 
@@ -27,7 +27,7 @@ public class ClimberSubsystem extends SubsystemBase {
   public double getMotor1Encoder() {
       return TalonMotor1.getRotorPosition().getValueAsDouble();
   }
-
+  
   public void setClimberSpeed(double speed){
     TalonMotor1.set(speed);
     TalonMotor2.set(speed);

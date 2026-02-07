@@ -16,7 +16,7 @@ public class PivotSubsystem extends SubsystemBase {
   private final PIDController pivotPID = new PIDController(0, 0, 0);
 
   public PivotSubsystem() {
-    TalonMotor3 = new TalonFX(0);
+    TalonMotor3 = new TalonFX(15);
     pivotPID.setTolerance(0);
   }
   
@@ -30,6 +30,10 @@ public class PivotSubsystem extends SubsystemBase {
   
   public void setPivotSpeed(double speed){
     TalonMotor3.set(speed);
+  }
+
+  public void resetAngle() {
+    TalonMotor3.setPosition(0);
   }
 
    public boolean pidAtSetpoint() {
